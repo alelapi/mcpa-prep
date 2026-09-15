@@ -1,0 +1,227 @@
+# Domain 5 Quiz — Use Cases & Ecosystem
+
+18 exam-style questions. Target: **15/18**.
+
+---
+
+**1.** Under which organization is MCP governed today?
+
+- A. The Cloud Native Computing Foundation
+- B. The Agentic AI Foundation, a directed fund under the Linux Foundation
+- C. The W3C
+- D. Anthropic alone
+
+??? success "Answer"
+    **B.** The AAIF was announced on 9 December 2025 with MCP, goose and AGENTS.md as founding projects.
+
+---
+
+**2.** Who holds final decision authority in MCP's technical governance?
+
+- A. The largest corporate member
+- B. The Lead Maintainers (BDFL role)
+- C. A public vote of contributors
+- D. The Linux Foundation board
+
+??? success "Answer"
+    **B.** Lead Maintainers can veto any decision and appoint Core Maintainers. Membership is for individuals, not companies.
+
+---
+
+**3.** What is the difference between an Interest Group and a Working Group?
+
+- A. They are the same
+- B. Interest Groups identify and discuss problems (non-binding); Working Groups build concrete solutions such as SEPs and implementations (binding decisions)
+- C. Working Groups are for companies; Interest Groups for individuals
+- D. Interest Groups write the specification
+
+??? success "Answer"
+    **B.** Typical flow: discuss in an IG, then form or join a WG to build a solution and submit a SEP.
+
+---
+
+**4.** A SEP found no sponsor within six months. What is its status?
+
+- A. `rejected`
+- B. `dormant`, which can be revived if a sponsor is found
+- C. `withdrawn`
+- D. `final`
+
+??? success "Answer"
+    **B.** Dormant is explicitly not the same as rejected.
+
+---
+
+**5.** Which is REQUIRED before a Standards Track SEP with observable protocol behavior can reach `final`?
+
+- A. Implementations in every Tier 1 SDK
+- B. A reference implementation and a merged conformance test scenario
+- C. Approval by the Linux Foundation board
+- D. A blog post
+
+??? success "Answer"
+    **B.** SDK implementations are not required for Final.
+
+---
+
+**6.** Which SEP type is used to propose a new MCP extension?
+
+- A. Informational
+- B. Process
+- C. Extensions Track
+- D. Standards Track only
+
+??? success "Answer"
+    **C.** Extensions Track follows the same review as Standards Track, and requires a reference implementation in an official SDK before review.
+
+---
+
+**7.** A host connects to 40 servers exposing 900 tools, and tool definitions consume most of the context window. Which pattern does the Client Best Practices guide recommend?
+
+- A. Remove servers until fewer than 20 tools remain
+- B. Progressive tool discovery: give the model a search meta-tool and load full definitions only when needed
+- C. Ask servers to shorten their descriptions
+- D. Use sampling to summarize tool lists
+
+??? success "Answer"
+    **B.** Switch past a threshold (for example 1–5% of the context window), using keyword, embedding, subagent or hybrid search.
+
+---
+
+**8.** In programmatic tool calling ("code mode"), which statement about security is correct?
+
+- A. Approving the script grants blanket approval for every tool call it makes
+- B. The sandbox should have direct network access to call servers
+- C. The broker should apply the same per-call authorization policy to sandbox-originated calls, and credentials stay in the host
+- D. Tool results from one server can be trusted as input to another
+
+??? success "Answer"
+    **C.** The sandbox is network-isolated, the host broker holds credentials, and cross-server results remain untrusted.
+
+---
+
+**9.** Why does a host implementing progressive discovery sometimes route calls through a single stable `call_tool({name, args})` meta-tool?
+
+- A. To bypass authorization
+- B. To avoid changing the tools array mid-conversation, which would invalidate the provider's prompt cache
+- C. Because MCP requires it
+- D. To reduce the number of servers
+
+??? success "Answer"
+    **B.** Adding or removing definitions mid-conversation breaks prompt caching; appending after the breakpoint or a stable meta-tool avoids that.
+
+---
+
+**10.** Which MCP extension moved from the core protocol into an extension in `2026-07-28`?
+
+- A. Elicitation
+- B. Tasks
+- C. Resources
+- D. Completion
+
+??? success "Answer"
+    **B.** Tasks is now `io.modelcontextprotocol/tasks`, with `tasks/get` polling and `tasks/update` for input.
+
+---
+
+**11.** A client that did **not** declare the Tasks extension calls a long-running tool. What must the server do?
+
+- A. Return a `CreateTaskResult` anyway
+- B. Never return a task to that client; fall back to core behavior or reject
+- C. Switch the client to Streamable HTTP
+- D. Return `resultType: "input_required"`
+
+??? success "Answer"
+    **B.** Servers must check the client declared the extension on the request. If one side lacks an extension, the other falls back or rejects.
+
+---
+
+**12.** How are MCP Apps rendered by web hosts?
+
+- A. Directly in the host page's DOM
+- B. In a sandboxed iframe, communicating with the host over postMessage using a JSON-RPC dialect of MCP
+- C. As images generated by the server
+- D. In a separate browser window with full cookie access
+
+??? success "Answer"
+    **B.** The UI comes from a `ui://` resource referenced by `_meta.ui.resourceUri`, rendered in a sandboxed iframe.
+
+---
+
+**13.** Under Skills over MCP, what must a host do before using a supporting file from a skill?
+
+- A. Nothing; skills from connected servers are trusted
+- B. Verify the file's size and SHA-256 digest against the retained manifest
+- C. Execute it to check it works
+- D. Fetch all files at connection time
+
+??? success "Answer"
+    **B.** Hosts must restrict reads to the manifest, verify digests and sizes, and must not retrieve files ahead of need.
+
+---
+
+**14.** Which SDKs are Tier 1?
+
+- A. TypeScript, Python, Java, Kotlin, Swift
+- B. TypeScript, Python, C#, Go, Rust
+- C. Python and TypeScript only
+- D. Go, Rust, Ruby, PHP
+
+??? success "Answer"
+    **B.** Java and Ruby are Tier 2; Swift, PHP and Kotlin are Tier 3.
+
+---
+
+**15.** What does Tier 1 require for conformance tests?
+
+- A. 50% pass rate
+- B. 80% pass rate
+- C. 100% pass rate
+- D. No requirement
+
+??? success "Answer"
+    **C.** Tier 2 requires 80%; Tier 3 has no minimum.
+
+---
+
+**16.** What does the official MCP Registry store?
+
+- A. Server source code and binaries
+- B. Metadata (`server.json`) pointing to packages on registries like npm and PyPI, or to remote server URLs
+- C. Only servers built by Anthropic
+- D. Private enterprise servers
+
+??? success "Answer"
+    **B.** Package registries host code; the MCP Registry hosts metadata. Private servers aren't supported.
+
+---
+
+**17.** A server is published as `io.github.alice/weather-mcp` in the MCP Registry. What does that guarantee?
+
+- A. The server's code has been security-audited
+- B. The publisher authenticated as the GitHub user `alice` (namespace ownership), not that the code is safe
+- C. The server supports every MCP feature
+- D. Anthropic endorses it
+
+??? success "Answer"
+    **B.** The registry verifies namespace ownership and delegates security scanning to package registries and aggregators.
+
+---
+
+**18.** Which is **NOT** portable across MCP hosts by virtue of the specification?
+
+- A. The JSON-RPC message format
+- B. Capability negotiation
+- C. The configuration file format used to register servers
+- D. Error codes
+
+??? success "Answer"
+    **C.** Host configuration (for example `claude_desktop_config.json`) is host-specific. `server.json` in the registry standardizes installation metadata, not host config.
+
+---
+
+| Score | Verdict |
+| --- | --- |
+| 16–18 | Ready for the mock exams. |
+| 12–15 | Re-read [Operational Use Cases](operational-use-cases.md) and [Extensions](extensions.md). |
+| < 12 | Rework the domain. |
