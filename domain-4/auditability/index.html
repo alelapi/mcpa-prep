@@ -1,0 +1,3505 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A complete, self-hosted preparation course for the Linux Foundation Model Context Protocol Associate (MCPA) certification">
+      
+      
+        <meta name="author" content="Alessio Lapi">
+      
+      
+      
+        <link rel="prev" href="../attacks-mitigations/">
+      
+      
+        <link rel="next" href="../quiz/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Auditability & Observability - MCPA Prep Course</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/css/app.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#auditability-observability" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="MCPA Prep Course" class="md-header__button md-logo" aria-label="MCPA Prep Course" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MCPA Prep Course
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Auditability & Observability
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/alelapi/mcpa-prep" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    mcpa-prep
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../exam/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Exam Guide
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../domain-1/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  1. Fundamentals (16%)
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../domain-2/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  2. Architecture (14%)
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../domain-3/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  3. Interactions (26%)
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  4. Security (24%)
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../domain-5/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  5. Ecosystem (20%)
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../labs/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Hands-On Labs
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../practice/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Practice Exams
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="MCPA Prep Course" class="md-nav__button md-logo" aria-label="MCPA Prep Course" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    MCPA Prep Course
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/alelapi/mcpa-prep" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    mcpa-prep
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../exam/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exam Guide
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Exam Guide
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../exam/blueprint/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Official Blueprint
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../exam/whats-new/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What Changed in 2026-07-28
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../exam/study-plan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Study Plan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../exam/resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Official Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../exam/exam-day/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exam-Day Strategy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../exam/glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../domain-1/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Fundamentals (16%)
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    1. Fundamentals (16%)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../domain-1/purpose-and-scope/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Why MCP Exists
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../domain-1/core-concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Core Concepts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../domain-1/interoperability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Interoperability & Value
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../domain-1/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../domain-2/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Architecture (14%)
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    2. Architecture (14%)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../domain-2/hosts-clients-servers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hosts, Clients & Servers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../domain-2/messages/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JSON-RPC Messages & _meta
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../domain-2/schemas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Schemas & Structured Data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../domain-2/transports/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Transports
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../domain-2/versioning-discovery/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Versioning & Discovery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../domain-2/interaction-flow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Model Interaction Flow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../domain-2/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../domain-3/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Interactions (26%)
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    3. Interactions (26%)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../domain-3/tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools & the Invocation Lifecycle
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../domain-3/resources-prompts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources & Prompts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../domain-3/mrtr-elicitation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Multi Round-Trip Requests & Elicitation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../domain-3/subscriptions-progress-cancellation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Subscriptions, Progress & Cancellation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../domain-3/error-handling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Error Handling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../domain-3/utilities/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Caching, Pagination & Completion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../domain-3/deprecated-features/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deprecated: Sampling, Roots & Logging
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../domain-3/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Security (24%)
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    4. Security (24%)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../trust-boundaries/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trust Boundaries
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../authorization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Authorization with OAuth 2.1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../permissions-consent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Permissions & Consent
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../attacks-mitigations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Attacks & Mitigations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Auditability & Observability
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Auditability & Observability
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-why-ai-tool-use-needs-an-audit-trail" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Why AI tool use needs an audit trail
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-what-the-specification-requires-or-recommends" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. What the specification requires or recommends
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-identity-the-foundation-of-accountability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Identity: the foundation of accountability
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Identity: the foundation of accountability">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#token-passthrough-destroys-the-audit-trail" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Token passthrough destroys the audit trail
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-observability-without-the-logging-feature" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Observability without the Logging feature
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-distributed-tracing-with-opentelemetry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Distributed tracing with OpenTelemetry
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Distributed tracing with OpenTelemetry">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The problem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-mcp-carries-trace-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How MCP carries trace context
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-not-just-use-http-headers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why not just use HTTP headers?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-opentelemetry-semantic-conventions-for-mcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The OpenTelemetry semantic conventions for MCP
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-what-a-good-mcp-audit-record-contains" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. What a good MCP audit record contains
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. What a good MCP audit record contains">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#balancing-auditability-and-privacy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Balancing auditability and privacy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-operational-observability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Operational observability
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Operational observability">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#debugging-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Debugging tools
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-governance-turning-logs-into-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Governance: turning logs into control
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-recap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Recap
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../domain-5/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Ecosystem (20%)
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    5. Ecosystem (20%)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../domain-5/roles-adoption/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roles, Responsibilities & Adoption
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../domain-5/operational-use-cases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operational Use Cases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../domain-5/extensions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Extensions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../domain-5/ecosystem-portability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ecosystem & Portability
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../domain-5/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../labs/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hands-On Labs
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Hands-On Labs
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../labs/00-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 0: Environment Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../labs/01-raw-json-rpc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 1: Speak MCP by Hand
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../labs/02-build-server/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 2: Build a Server
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../labs/03-build-client/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 3: Build a Client
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../labs/04-streamable-http/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 4: Streamable HTTP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../labs/05-elicitation-mrtr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 5: Elicitation & MRTR
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../labs/06-security-hardening/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 6: Security Hardening
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../practice/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Practice Exams
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_9" id="__nav_9_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Practice Exams
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../practice/mock-exam-1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mock Exam 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../practice/mock-exam-2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mock Exam 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../practice/flashcards/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rapid-Fire Flashcards
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-why-ai-tool-use-needs-an-audit-trail" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Why AI tool use needs an audit trail
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-what-the-specification-requires-or-recommends" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. What the specification requires or recommends
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-identity-the-foundation-of-accountability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Identity: the foundation of accountability
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Identity: the foundation of accountability">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#token-passthrough-destroys-the-audit-trail" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Token passthrough destroys the audit trail
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-observability-without-the-logging-feature" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Observability without the Logging feature
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-distributed-tracing-with-opentelemetry" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Distributed tracing with OpenTelemetry
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5. Distributed tracing with OpenTelemetry">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#the-problem" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The problem
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-mcp-carries-trace-context" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How MCP carries trace context
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-not-just-use-http-headers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Why not just use HTTP headers?
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-opentelemetry-semantic-conventions-for-mcp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The OpenTelemetry semantic conventions for MCP
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-what-a-good-mcp-audit-record-contains" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. What a good MCP audit record contains
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. What a good MCP audit record contains">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#balancing-auditability-and-privacy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Balancing auditability and privacy
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-operational-observability" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Operational observability
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. Operational observability">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#debugging-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Debugging tools
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-governance-turning-logs-into-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Governance: turning logs into control
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-recap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Recap
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    4. Security (24%)
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="auditability-observability">Auditability &amp; Observability<a class="headerlink" href="#auditability-observability" title="Permanent link">&para;</a></h1>
+<p><em>Competency: <strong>Auditability &amp; Observability</strong>.</em></p>
+<p><strong>Observability</strong> answers <em>what is happening right now, and why is it slow or failing?</em> <strong>Auditability</strong> answers
+<em>who did what, when, on whose authority, and can we prove it?</em> AI agents make both harder: actions are taken by a
+model on a user&rsquo;s behalf, across several servers, in response to text nobody reviewed. This chapter covers what
+MCP provides, what it deliberately leaves to standard tooling, and what implementors must record.</p>
+<hr />
+<h2 id="1-why-ai-tool-use-needs-an-audit-trail">1. Why AI tool use needs an audit trail<a class="headerlink" href="#1-why-ai-tool-use-needs-an-audit-trail" title="Permanent link">&para;</a></h2>
+<p>A traditional application action has a clear chain: <em>user clicked button → handler ran → database row changed</em>. An
+MCP action has a longer, less obvious one:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>user prompt → model reasoning (maybe influenced by a tool result from server B)
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>            → tool call proposed → host policy / user approval
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>            → client request → server A → upstream API call
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>            → result → model → next action
+</code></pre></div>
+<p>When something goes wrong (data deleted, an email sent to the wrong person, a secret leaked), you need to reconstruct
+that chain:</p>
+<ul>
+<li><strong>What</strong> was called, with <strong>which arguments</strong>?</li>
+<li><strong>Which server</strong> and <strong>which version</strong> handled it?</li>
+<li><strong>Who</strong> was the authenticated user, and <strong>which client</strong> acted for them?</li>
+<li><strong>Did a human approve</strong> it, or was it auto-approved, and under which policy?</li>
+<li><strong>What came back</strong>, and did it influence later calls?</li>
+<li><strong>What authority</strong> (token scopes) did the call carry?</li>
+</ul>
+<p>The specification is explicit that clients <strong>SHOULD log tool usage for audit purposes</strong>, and that servers and proxies must
+produce records that make incidents investigable.</p>
+<hr />
+<h2 id="2-what-the-specification-requires-or-recommends">2. What the specification requires or recommends<a class="headerlink" href="#2-what-the-specification-requires-or-recommends" title="Permanent link">&para;</a></h2>
+<p>Collected across the spec and security best practices:</p>
+<table>
+<thead>
+<tr>
+<th>Party</th>
+<th>Recommendation</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Client</strong></td>
+<td><strong>Log tool usage</strong> for audit purposes (SHOULD)</td>
+<td>Accountability for model-initiated actions</td>
+</tr>
+<tr>
+<td><strong>Host</strong></td>
+<td><strong>Activity logs</strong> of all tool executions with results (documented pattern)</td>
+<td>User-visible review</td>
+</tr>
+<tr>
+<td><strong>Both</strong></td>
+<td><strong>Log cancellation reasons</strong> (SHOULD); UIs indicate cancellation</td>
+<td>Debugging interrupted work</td>
+</tr>
+<tr>
+<td><strong>Server</strong></td>
+<td><strong>Log scope elevation events</strong>: scope requested, subset granted, <strong>with correlation IDs</strong></td>
+<td>Audit privilege changes</td>
+</tr>
+<tr>
+<td><strong>Proxy</strong></td>
+<td><strong>Log all stdio transport usage</strong> (process spawning)</td>
+<td>Detect escalation</td>
+</tr>
+<tr>
+<td><strong>Client</strong></td>
+<td><strong>Log suspicious authorization URLs</strong></td>
+<td>Security monitoring</td>
+</tr>
+<tr>
+<td><strong>Schema validators</strong> (opt-in network <code>$ref</code>)</td>
+<td><strong>Log dereferenced URIs</strong></td>
+<td>SSRF forensics</td>
+</tr>
+<tr>
+<td><strong>Client</strong> (tool rejections)</td>
+<td><strong>Log a warning</strong> when excluding an invalid <code>x-mcp-header</code> tool: tool name and reason</td>
+<td>Explain missing tools</td>
+</tr>
+<tr>
+<td><strong>Enterprise</strong></td>
+<td>Enterprise-Managed Authorization gives an <strong>auditable authorization trail</strong> via the IdP</td>
+<td>Compliance</td>
+</tr>
+</tbody>
+</table>
+<p>And what logs <strong>must not</strong> contain. From the (deprecated) Logging feature&rsquo;s security rules, which apply to logging in general:</p>
+<ul>
+<li><strong>credentials or secrets</strong>,</li>
+<li><strong>personally identifying information</strong>,</li>
+<li><strong>internal system details that could aid attacks</strong>.</li>
+</ul>
+<hr />
+<h2 id="3-identity-the-foundation-of-accountability">3. Identity: the foundation of accountability<a class="headerlink" href="#3-identity-the-foundation-of-accountability" title="Permanent link">&para;</a></h2>
+<p>An audit record is only as good as its <strong>identity</strong> fields, and MCP offers identity values that look useful but aren&rsquo;t
+trustworthy.</p>
+<table>
+<thead>
+<tr>
+<th>Identity source</th>
+<th>Trustworthy for audit?</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>io.modelcontextprotocol/clientInfo</code></td>
+<td><strong>No</strong> (as proof)</td>
+<td><strong>Self-reported</strong>; log it for debugging, never as the actor of record</td>
+</tr>
+<tr>
+<td><code>io.modelcontextprotocol/serverInfo</code></td>
+<td><strong>No</strong> (as proof)</td>
+<td>Self-reported; record it, but trust comes from configuration and source</td>
+</tr>
+<tr>
+<td>User-provided claims (&ldquo;I am joe@…&rdquo;)</td>
+<td><strong>No</strong></td>
+<td>Servers <strong>MUST NOT</strong> rely on unverified identification</td>
+</tr>
+<tr>
+<td><strong>Validated access token</strong> (<code>sub</code>, <code>client_id</code>, scopes, audience)</td>
+<td><strong>Yes</strong></td>
+<td>The authoritative identity for remote servers</td>
+</tr>
+<tr>
+<td>Enterprise IdP assertion / ID-JAG subject</td>
+<td><strong>Yes</strong></td>
+<td>Stable subject for account linking and audit</td>
+</tr>
+<tr>
+<td>stdio process owner</td>
+<td>Implicit</td>
+<td>The local user; the host is the audit point</td>
+</tr>
+</tbody>
+</table>
+<p>For remote servers, the spec&rsquo;s guidance on user identity is explicit: <strong>derive it from credentials acquired via MCP authorization</strong>
+when possible, such as the <strong><code>sub</code> claim</strong>. Bind audit records, state handles and elicitation state to <strong>that</strong> identity.</p>
+<h3 id="token-passthrough-destroys-the-audit-trail">Token passthrough destroys the audit trail<a class="headerlink" href="#token-passthrough-destroys-the-audit-trail" title="Permanent link">&para;</a></h3>
+<p>The security best practices list <strong>accountability</strong> as a core reason passthrough is forbidden. If a server forwards the client&rsquo;s token:</p>
+<ul>
+<li>the MCP server <strong>can&rsquo;t distinguish</strong> which MCP client made a call, because it sees an opaque upstream token;</li>
+<li>the <strong>upstream API&rsquo;s logs</strong> show a request apparently from a different identity than the MCP server that actually sent it.</li>
+</ul>
+<p>Both make incident investigation harder. Separate tokens per hop keep each system&rsquo;s log truthful about who called it.</p>
+<hr />
+<h2 id="4-observability-without-the-logging-feature">4. Observability without the Logging feature<a class="headerlink" href="#4-observability-without-the-logging-feature" title="Permanent link">&para;</a></h2>
+<p>The MCP <strong>Logging</strong> utility (<code>notifications/message</code>) is <strong>deprecated</strong> as of <code>2026-07-28</code>. The migration path doubles as the
+observability guidance:</p>
+<ul>
+<li><strong>stdio servers: log to <code>stderr</code>.</strong> The server <strong>MAY</strong> write any UTF-8 logging to stderr; the client <strong>MAY</strong> capture, forward or ignore
+  it, and <strong>SHOULD NOT</strong> assume stderr output means an error. Never write logs to <strong>stdout</strong>, which is reserved for MCP messages.</li>
+<li><strong>Everything else: OpenTelemetry.</strong></li>
+</ul>
+<p>SEP-2577&rsquo;s reasoning: standard mechanisms (stderr, OpenTelemetry) are <em>&ldquo;mature, widely adopted, and better suited to logging than an
+application-protocol channel.&rdquo;</em></p>
+<p>If an existing implementation still uses Logging: the client sets <code>io.modelcontextprotocol/logLevel</code> <strong>per request</strong>; the server <strong>MUST NOT</strong>
+emit <code>notifications/message</code> for requests without it; messages are request-scoped and never on <code>subscriptions/listen</code> streams.</p>
+<hr />
+<h2 id="5-distributed-tracing-with-opentelemetry">5. Distributed tracing with OpenTelemetry<a class="headerlink" href="#5-distributed-tracing-with-opentelemetry" title="Permanent link">&para;</a></h2>
+<h3 id="the-problem">The problem<a class="headerlink" href="#the-problem" title="Permanent link">&para;</a></h3>
+<p>One user action can span: the host&rsquo;s agent loop, a model API call, an MCP client, an HTTP request, an MCP server, and one or more upstream
+services. Without correlation, each produces isolated logs and nobody can tell which upstream call belonged to which user prompt.</p>
+<p><strong>Distributed tracing</strong> solves this by propagating a <strong>trace context</strong> (a trace ID plus a parent span ID) across every hop, so all the spans
+form one tree.</p>
+<h3 id="how-mcp-carries-trace-context">How MCP carries trace context<a class="headerlink" href="#how-mcp-carries-trace-context" title="Permanent link">&para;</a></h3>
+<p>The spec reserves three <code>_meta</code> keys, an explicit exception to the prefix rule, for compatibility with OpenTelemetry:</p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Format</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>traceparent</code></td>
+<td>W3C Trace Context</td>
+</tr>
+<tr>
+<td><code>tracestate</code></td>
+<td>W3C Trace Context</td>
+</tr>
+<tr>
+<td><code>baggage</code></td>
+<td>W3C Baggage</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="nt">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tools/call"</span><span class="p">,</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">  </span><span class="nt">"params"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"get_weather"</span><span class="p">,</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="nt">"arguments"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"location"</span><span class="p">:</span><span class="w"> </span><span class="s2">"New York"</span><span class="w"> </span><span class="p">},</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">    </span><span class="nt">"_meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">      </span><span class="nt">"io.modelcontextprotocol/protocolVersion"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-07-28"</span><span class="p">,</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">      </span><span class="nt">"io.modelcontextprotocol/clientCapabilities"</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">      </span><span class="nt">"traceparent"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00-0af7651916cd43dd8448eb211c80319c-00f067aa0ba902b7-01"</span>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="p">}</span>
+</code></pre></div>
+<p>A <code>traceparent</code> value has four parts: version <code>00</code>, the 32-hex <strong>trace ID</strong> shared by every span in the operation, the 16-hex <strong>parent span ID</strong>
+(the caller&rsquo;s span), and <strong>flags</strong> (<code>01</code> = sampled).</p>
+<h3 id="why-not-just-use-http-headers">Why not just use HTTP headers?<a class="headerlink" href="#why-not-just-use-http-headers" title="Permanent link">&para;</a></h3>
+<p>HTTP already has <code>traceparent</code> headers. But:</p>
+<ul>
+<li><strong>stdio has no headers</strong>; <code>_meta</code> works on every transport.</li>
+<li>One MCP request may use <strong>several</strong> HTTP requests (for example retries after a broken stream), and one HTTP connection can carry several MCP
+  messages. The <strong>MCP-level</strong> context is independent of the transport&rsquo;s.</li>
+</ul>
+<h3 id="the-opentelemetry-semantic-conventions-for-mcp">The OpenTelemetry semantic conventions for MCP<a class="headerlink" href="#the-opentelemetry-semantic-conventions-for-mcp" title="Permanent link">&para;</a></h3>
+<p>OpenTelemetry publishes semantic conventions for MCP, currently in <strong>Development</strong> status. Their key points:</p>
+<ul>
+<li>Instrumentations <strong>SHOULD</strong> inject context into <strong><code>params._meta</code></strong> when creating a request, and receivers <strong>extract</strong> it as the <strong>remote parent</strong>.
+  Trace keys are written <strong>unprefixed</strong> (per SEP-414).</li>
+<li><strong>Span name</strong> <strong>SHOULD</strong> be <code>{mcp.method.name} {target}</code>, e.g. <code>tools/call get_weather</code>.</li>
+<li>Client spans are kind <strong>CLIENT</strong>; server spans are kind <strong>SERVER</strong>. The MCP client span is the parent of the server span <strong>regardless of
+  transport</strong>, with span links recording transport context.</li>
+<li>Selected attributes:</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>mcp.method.name</code></td>
+<td>Method, e.g. <code>tools/call</code> (<strong>required</strong>)</td>
+</tr>
+<tr>
+<td><code>gen_ai.tool.name</code></td>
+<td>Tool name, when the operation concerns a tool</td>
+</tr>
+<tr>
+<td><code>gen_ai.prompt.name</code></td>
+<td>Prompt name</td>
+</tr>
+<tr>
+<td><code>mcp.resource.uri</code></td>
+<td>Resource URI (opt-in in span names, to avoid high cardinality)</td>
+</tr>
+<tr>
+<td><code>jsonrpc.request.id</code></td>
+<td>Request id</td>
+</tr>
+<tr>
+<td><code>mcp.protocol.version</code></td>
+<td>Protocol version</td>
+</tr>
+<tr>
+<td><code>error.type</code></td>
+<td>JSON-RPC error code, or <strong><code>tool_error</code></strong> when a tool result has <strong><code>isError: true</code></strong></td>
+</tr>
+<tr>
+<td><code>gen_ai.tool.call.arguments</code> / <code>.result</code></td>
+<td><strong>Opt-in</strong>, because they may contain sensitive data</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Metrics include <code>mcp.client.operation.duration</code> and <code>mcp.server.operation.duration</code> (histograms, seconds).</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Conventions lag the redesign</p>
+<p>These conventions predate <code>2026-07-28</code> in places. For example they still describe an <code>mcp.session.id</code> attribute for protocol sessions, which no
+longer exist in the current protocol. Treat them as evolving guidance.</p>
+</div>
+<p>Note the <code>error.type = tool_error</code> convention. It makes <strong>tool execution errors</strong> visible in metrics even though they are successful JSON-RPC
+responses, so a dashboard doesn&rsquo;t show a tool failing 40% of the time as 100% success.</p>
+<hr />
+<h2 id="6-what-a-good-mcp-audit-record-contains">6. What a good MCP audit record contains<a class="headerlink" href="#6-what-a-good-mcp-audit-record-contains" title="Permanent link">&para;</a></h2>
+<p>Combining the above, a host and server can log for each tool call:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">{</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">  </span><span class="nt">"timestamp"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-09-15T14:03:22.418Z"</span><span class="p">,</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">  </span><span class="nt">"trace_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0af7651916cd43dd8448eb211c80319c"</span><span class="p">,</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w">  </span><span class="nt">"span_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"00f067aa0ba902b7"</span><span class="p">,</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">  </span><span class="nt">"actor"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"sub"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user_8f21"</span><span class="p">,</span><span class="w"> </span><span class="nt">"client_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://app.example.com/oauth/client.json"</span><span class="w"> </span><span class="p">},</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w">  </span><span class="nt">"server"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"crm-server"</span><span class="p">,</span><span class="w"> </span><span class="nt">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"3.1.0"</span><span class="p">,</span><span class="w"> </span><span class="nt">"origin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://mcp.crm.example"</span><span class="w"> </span><span class="p">},</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w">  </span><span class="nt">"method"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tools/call"</span><span class="p">,</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w">  </span><span class="nt">"tool"</span><span class="p">:</span><span class="w"> </span><span class="s2">"update_contact"</span><span class="p">,</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w">  </span><span class="nt">"tool_definition_hash"</span><span class="p">:</span><span class="w"> </span><span class="s2">"sha256:9c1e…"</span><span class="p">,</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w">  </span><span class="nt">"arguments"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"contact_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"c_2291"</span><span class="p">,</span><span class="w"> </span><span class="nt">"fields"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"phone"</span><span class="p">]</span><span class="w"> </span><span class="p">},</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w">  </span><span class="nt">"approval"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"mode"</span><span class="p">:</span><span class="w"> </span><span class="s2">"user_confirmed"</span><span class="p">,</span><span class="w"> </span><span class="nt">"at"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2026-09-15T14:03:20.002Z"</span><span class="w"> </span><span class="p">},</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w">  </span><span class="nt">"scopes"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"contacts:write"</span><span class="p">],</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w">  </span><span class="nt">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"resultType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"complete"</span><span class="p">,</span><span class="w"> </span><span class="nt">"isError"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="p">},</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w">  </span><span class="nt">"duration_ms"</span><span class="p">:</span><span class="w"> </span><span class="mi">412</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="p">}</span>
+</code></pre></div>
+<p>Field by field:</p>
+<ul>
+<li><code>trace_id</code> / <code>span_id</code>: correlates with model calls and upstream services.</li>
+<li><code>actor</code>: <strong>validated</strong> identity from the token, not <code>clientInfo</code>.</li>
+<li><code>server</code> / <code>tool_definition_hash</code>: shows exactly which server and which definition ran, which supports rug-pull detection.</li>
+<li><code>arguments</code>: <strong>redacted or minimized</strong> as required. Record enough to investigate, never secrets or unnecessary PII.</li>
+<li><code>approval</code>: proves <strong>human in the loop</strong>, or records the auto-approval policy used.</li>
+<li><code>scopes</code>: the authority the call carried.</li>
+<li><code>result</code> status: distinguishes protocol errors, tool execution errors and success.</li>
+</ul>
+<h3 id="balancing-auditability-and-privacy">Balancing auditability and privacy<a class="headerlink" href="#balancing-auditability-and-privacy" title="Permanent link">&para;</a></h3>
+<p>Full arguments and results are the most useful for investigation and the most dangerous to store. Practical controls:</p>
+<ul>
+<li><strong>Redact</strong> known secret patterns and PII before writing.</li>
+<li>Make argument and result capture <strong>opt-in</strong> or policy-controlled (as the OpenTelemetry conventions do).</li>
+<li><strong>Restrict</strong> log access, set <strong>retention</strong> limits, and protect logs as the sensitive data they are.</li>
+</ul>
+<hr />
+<h2 id="7-operational-observability">7. Operational observability<a class="headerlink" href="#7-operational-observability" title="Permanent link">&para;</a></h2>
+<p>Beyond audit, operators need to see health:</p>
+<table>
+<thead>
+<tr>
+<th>Signal</th>
+<th>Why it matters</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Operation duration by method and tool</td>
+<td>Slow tools, timeouts</td>
+</tr>
+<tr>
+<td>Error rate by <code>error.type</code>, <strong>including <code>tool_error</code></strong></td>
+<td>Failing upstreams, bad schemas, model misuse</td>
+</tr>
+<tr>
+<td><code>-32022</code> / <code>-32021</code> / <code>-32020</code> counts</td>
+<td>Version skew, capability mismatches, broken intermediaries</td>
+</tr>
+<tr>
+<td><code>input_required</code> rate and retry completion</td>
+<td>Elicitation friction; abandoned flows</td>
+</tr>
+<tr>
+<td>401 / 403 rates, step-up events</td>
+<td>Token expiry, scope design problems</td>
+</tr>
+<tr>
+<td>Cancellations and broken streams</td>
+<td>Timeouts too short, proxy buffering (<code>X-Accel-Buffering</code>)</td>
+</tr>
+<tr>
+<td><code>subscriptions/listen</code> reconnects</td>
+<td>Idle connections being dropped (keep-alives)</td>
+</tr>
+<tr>
+<td>Rate-limit hits per tool and principal</td>
+<td>Runaway agent loops</td>
+</tr>
+</tbody>
+</table>
+<h3 id="debugging-tools">Debugging tools<a class="headerlink" href="#debugging-tools" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>MCP Inspector</strong>: the official interactive tool for testing servers, in web, CLI and TUI forms. It shows raw requests and responses, and handles
+  OAuth and protocol eras.</li>
+<li><strong>stderr capture</strong> in hosts: most &ldquo;server won&rsquo;t start&rdquo; problems are visible there.</li>
+<li><strong>Traces</strong> spanning host → server → upstream, via <code>traceparent</code> in <code>_meta</code>.</li>
+</ul>
+<hr />
+<h2 id="8-governance-turning-logs-into-control">8. Governance: turning logs into control<a class="headerlink" href="#8-governance-turning-logs-into-control" title="Permanent link">&para;</a></h2>
+<p>Auditability supports <strong>governance</strong> decisions the exam&rsquo;s &ldquo;AI governance &amp; security roles&rdquo; care about:</p>
+<ul>
+<li><strong>Which servers are allowed?</strong> Allowlists by source or registry namespace, enforced by hosts or enterprise policy.</li>
+<li><strong>Which tools need approval?</strong> Risk tiers backed by evidence from usage logs.</li>
+<li><strong>Who has access?</strong> Enterprise-Managed Authorization for central policy, central revocation and a single trail.</li>
+<li><strong>Did a change alter behavior?</strong> Definition hashes and version pinning.</li>
+<li><strong>Are deprecated features still in use?</strong> Inventory which servers depend on sampling, roots or logging before their removal window.</li>
+</ul>
+<hr />
+<h2 id="9-recap">9. Recap<a class="headerlink" href="#9-recap" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Auditability = <em>who did what, on whose authority</em>. Observability = <em>what&rsquo;s happening and why</em>. AI tool use needs both, because actions are
+  model-initiated across multiple systems.</li>
+<li>Clients <strong>SHOULD log tool usage</strong>; servers <strong>log scope elevation with correlation IDs</strong>; proxies <strong>log stdio spawning</strong>; log suspicious URLs and
+  cancellation reasons.</li>
+<li><strong>Never log</strong> credentials, secrets, PII or attack-aiding internals; redact, restrict, retain minimally.</li>
+<li>Audit identity = <strong>validated token claims</strong> (<code>sub</code>, <code>client_id</code>, scopes), <strong>not</strong> <code>clientInfo</code>/<code>serverInfo</code> or user claims.</li>
+<li><strong>Token passthrough breaks accountability</strong> on both the MCP server and upstream sides.</li>
+<li>Logging is deprecated: use <strong>stderr</strong> (stdio, never stdout) and <strong>OpenTelemetry</strong>.</li>
+<li>Trace context rides in <strong><code>_meta</code></strong>: <strong><code>traceparent</code></strong>, <strong><code>tracestate</code></strong>, <strong><code>baggage</code></strong> (unprefixed, W3C formats), and works over stdio too.</li>
+<li>OTel MCP conventions (Development): span <code>{mcp.method.name} {target}</code>, <code>mcp.method.name</code>, <code>gen_ai.tool.name</code>, <strong><code>error.type = tool_error</code></strong> for
+  <code>isError</code>, opt-in arguments and results.</li>
+<li>A good record: trace ids, validated actor, server and definition hash, minimized arguments, <strong>approval evidence</strong>, scopes, result status.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../attacks-mitigations/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Attacks &amp; Mitigations">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Attacks & Mitigations
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../quiz/" class="md-footer__link md-footer__link--next" aria-label="Next: Quiz">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Quiz
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "content.code.annotate", "content.tabs.link", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.top", "navigation.path", "navigation.footer", "navigation.tracking", "search.highlight", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

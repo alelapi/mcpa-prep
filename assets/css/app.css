@@ -1,0 +1,50 @@
+:root {
+  --mcp-accent: #4f46e5;
+  --mcp-accent-dark: #818cf8;
+}
+
+[data-md-color-scheme="default"] {
+  --md-primary-fg-color: #111111;
+  --md-primary-bg-color: #ffffff;
+  --md-accent-fg-color: var(--mcp-accent);
+}
+
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color: #0b0b0f;
+  --md-primary-bg-color: #ffffff;
+  --md-accent-fg-color: var(--mcp-accent-dark);
+}
+
+.weight {
+  display: inline-block;
+  padding: 0.1rem 0.5rem;
+  border-radius: 1rem;
+  background: var(--mcp-accent);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.7rem;
+}
+
+/* Domain label on mock exam questions */
+.domain-tag {
+  display: inline-block;
+  padding: 0 0.4rem;
+  border-radius: 0.3rem;
+  border: 1px solid var(--md-default-fg-color--lighter);
+  color: var(--md-default-fg-color--light);
+  font-weight: 700;
+  font-size: 0.65rem;
+  vertical-align: middle;
+}
+
+/* Mark content that changed in the 2026-07-28 revision */
+.new-2026 {
+  display: inline-block;
+  padding: 0 0.4rem;
+  border-radius: 0.3rem;
+  background: #f59e0b;
+  color: #111;
+  font-weight: 700;
+  font-size: 0.65rem;
+  vertical-align: middle;
+}

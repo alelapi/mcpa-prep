@@ -1,0 +1,3737 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A complete, self-hosted preparation course for the Linux Foundation Model Context Protocol Associate (MCPA) certification">
+      
+      
+        <meta name="author" content="Alessio Lapi">
+      
+      
+      
+        <link rel="prev" href="../schemas/">
+      
+      
+        <link rel="next" href="../versioning-discovery/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Transports - MCPA Prep Course</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/css/app.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#transports" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="MCPA Prep Course" class="md-header__button md-logo" aria-label="MCPA Prep Course" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            MCPA Prep Course
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Transports
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/alelapi/mcpa-prep" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    mcpa-prep
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../exam/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Exam Guide
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../domain-1/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  1. Fundamentals (16%)
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  2. Architecture (14%)
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../domain-3/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  3. Interactions (26%)
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../domain-4/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  4. Security (24%)
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../domain-5/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  5. Ecosystem (20%)
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../labs/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Hands-On Labs
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../practice/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Practice Exams
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="MCPA Prep Course" class="md-nav__button md-logo" aria-label="MCPA Prep Course" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    MCPA Prep Course
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/alelapi/mcpa-prep" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+  </div>
+  <div class="md-source__repository">
+    mcpa-prep
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../exam/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exam Guide
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Exam Guide
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../exam/blueprint/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Official Blueprint
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../exam/whats-new/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What Changed in 2026-07-28
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../exam/study-plan/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Study Plan
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../exam/resources/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Official Resources
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../exam/exam-day/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Exam-Day Strategy
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../exam/glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../domain-1/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. Fundamentals (16%)
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    1. Fundamentals (16%)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../domain-1/purpose-and-scope/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Why MCP Exists
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../domain-1/core-concepts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Core Concepts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../domain-1/interoperability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Interoperability & Value
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../domain-1/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Architecture (14%)
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    2. Architecture (14%)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../hosts-clients-servers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hosts, Clients & Servers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../messages/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JSON-RPC Messages & _meta
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../schemas/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Schemas & Structured Data
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Transports
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Transports
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-what-every-transport-must-do" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. What every transport must do
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-stdio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. stdio
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. stdio">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How it works
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-framing-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The framing rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#direction-on-stdio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Direction on stdio
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Metadata
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cancellation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cancellation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shutdown" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Shutdown
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unexpected-termination" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unexpected termination
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authorization-on-stdio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authorization on stdio
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-to-use-stdio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When to use stdio
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-streamable-http" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Streamable HTTP
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Streamable HTTP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-it-works_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How it works
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sending-messages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sending messages
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#receiving-messages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Receiving messages
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-request-metadata-headers-2026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 Request metadata headers 2026
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-headers-from-tool-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Custom headers from tool parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#server-validation-why-mismatches-are-rejected" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Server validation: why mismatches are rejected
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security-and-the-endpoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security and the endpoint
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cancellation-on-http" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cancellation on HTTP
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authorization-on-http" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authorization on HTTP
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#legacy-http-traffic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Legacy HTTP traffic
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-choosing-a-transport" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Choosing a transport
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-custom-transports" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Custom transports
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-the-deprecated-httpsse-transport" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. The deprecated HTTP+SSE transport
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-recap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Recap
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../versioning-discovery/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Versioning & Discovery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../interaction-flow/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Model Interaction Flow
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../domain-3/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Interactions (26%)
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    3. Interactions (26%)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../domain-3/tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools & the Invocation Lifecycle
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../domain-3/resources-prompts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Resources & Prompts
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../domain-3/mrtr-elicitation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Multi Round-Trip Requests & Elicitation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../domain-3/subscriptions-progress-cancellation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Subscriptions, Progress & Cancellation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../domain-3/error-handling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Error Handling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../domain-3/utilities/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Caching, Pagination & Completion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../domain-3/deprecated-features/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Deprecated: Sampling, Roots & Logging
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../domain-3/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../domain-4/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Security (24%)
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    4. Security (24%)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../domain-4/trust-boundaries/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Trust Boundaries
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../domain-4/authorization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Authorization with OAuth 2.1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../domain-4/permissions-consent/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Permissions & Consent
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../domain-4/attacks-mitigations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Attacks & Mitigations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../domain-4/auditability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Auditability & Observability
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../domain-4/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../domain-5/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Ecosystem (20%)
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    5. Ecosystem (20%)
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../domain-5/roles-adoption/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roles, Responsibilities & Adoption
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../domain-5/operational-use-cases/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operational Use Cases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../domain-5/extensions/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Extensions
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../domain-5/ecosystem-portability/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ecosystem & Portability
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../domain-5/quiz/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Quiz
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../labs/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hands-On Labs
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Hands-On Labs
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../labs/00-setup/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 0: Environment Setup
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../labs/01-raw-json-rpc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 1: Speak MCP by Hand
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../labs/02-build-server/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 2: Build a Server
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../labs/03-build-client/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 3: Build a Client
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../labs/04-streamable-http/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 4: Streamable HTTP
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../labs/05-elicitation-mrtr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 5: Elicitation & MRTR
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../labs/06-security-hardening/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Lab 6: Security Hardening
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../practice/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Practice Exams
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_9" id="__nav_9_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Practice Exams
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../practice/mock-exam-1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mock Exam 1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../practice/mock-exam-2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mock Exam 2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../practice/flashcards/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rapid-Fire Flashcards
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-what-every-transport-must-do" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. What every transport must do
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-stdio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. stdio
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. stdio">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-it-works" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How it works
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-framing-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The framing rules
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#direction-on-stdio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Direction on stdio
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metadata" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Metadata
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cancellation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cancellation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#shutdown" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Shutdown
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unexpected-termination" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Unexpected termination
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authorization-on-stdio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authorization on stdio
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-to-use-stdio" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        When to use stdio
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-streamable-http" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Streamable HTTP
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. Streamable HTTP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-it-works_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How it works
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sending-messages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Sending messages
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#receiving-messages" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Receiving messages
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-request-metadata-headers-2026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3.3 Request metadata headers 2026
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-headers-from-tool-parameters" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Custom headers from tool parameters
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#server-validation-why-mismatches-are-rejected" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Server validation: why mismatches are rejected
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#security-and-the-endpoint" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security and the endpoint
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cancellation-on-http" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cancellation on HTTP
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authorization-on-http" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authorization on HTTP
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#legacy-http-traffic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Legacy HTTP traffic
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-choosing-a-transport" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Choosing a transport
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-custom-transports" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Custom transports
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-the-deprecated-httpsse-transport" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. The deprecated HTTP+SSE transport
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-recap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Recap
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="Navigation" >
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    Home
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    2. Architecture (14%)
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="transports">Transports<a class="headerlink" href="#transports" title="Permanent link">&para;</a></h1>
+<p><em>Part of the exam focus on <strong>transports</strong>.</em></p>
+<p>The data layer defines <strong>what</strong> is said. A transport defines <strong>how it travels</strong>: framing, delivery,
+where metadata lives, how cancellation is signaled. The specification is explicit that this separation
+is strict:</p>
+<blockquote>
+<p>Protocol semantics are identical on every transport. A transport is a <strong>binding</strong>: it defines how
+messages are framed and delivered, how request metadata is carried, and how cancellation and
+termination are signaled. It does not define what the messages mean.</p>
+</blockquote>
+<p>MCP defines two standard transports, <strong>stdio</strong> and <strong>Streamable HTTP</strong>, and allows custom ones.</p>
+<hr />
+<h2 id="1-what-every-transport-must-do">1. What every transport must do<a class="headerlink" href="#1-what-every-transport-must-do" title="Permanent link">&para;</a></h2>
+<p>A transport binding <strong>MUST</strong> deliver:</p>
+<ul>
+<li>client-sent <strong>requests</strong> and <strong>notifications</strong> to the server, and</li>
+<li>server-sent <strong>responses</strong> and <strong>notifications</strong> to the client.</li>
+</ul>
+<p><strong>No other message direction exists.</strong> Because servers never send requests and clients never send
+responses, a transport only needs to carry traffic in this one shape. That is a large simplification
+compared with earlier revisions.</p>
+<p>Messages are JSON-RPC, <strong>UTF-8</strong> encoded. All protocol metadata lives in the <strong>message body</strong>
+(<code>_meta</code>). A transport <strong>MAY</strong> mirror some body fields into envelope metadata (HTTP does, as headers), but
+<strong>the body remains the source of truth</strong>.</p>
+<hr />
+<h2 id="2-stdio">2. stdio<a class="headerlink" href="#2-stdio" title="Permanent link">&para;</a></h2>
+<h3 id="how-it-works">How it works<a class="headerlink" href="#how-it-works" title="Permanent link">&para;</a></h3>
+<p>In the <strong>stdio</strong> transport, the <strong>client launches the server as a subprocess</strong> and they talk over the
+subprocess&rsquo;s standard streams.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>┌──────────── Host process ─────────────┐        ┌────── Server subprocess ──────┐
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>│                                       │ stdin  │                               │
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>│   Client ─────── requests, ──────────────────► │  reads one JSON message/line  │
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>│           notifications/cancelled     │        │                               │
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>│                                       │ stdout │                               │
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>│   Client ◄────── responses, ─────────────────── │  writes one JSON message/line │
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>│                  notifications        │        │                               │
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>│                                       │ stderr │                               │
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>│   (capture / forward / ignore) ◄──────────────── │  logs, anything else          │
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>└───────────────────────────────────────┘        └───────────────────────────────┘
+</code></pre></div>
+<h3 id="the-framing-rules">The framing rules<a class="headerlink" href="#the-framing-rules" title="Permanent link">&para;</a></h3>
+<ul>
+<li>The server reads JSON-RPC messages from <strong>stdin</strong> and writes them to <strong>stdout</strong>.</li>
+<li>Each message is a <strong>single</strong> JSON-RPC request, notification or response.</li>
+<li>Messages are <strong>delimited by newlines</strong> and <strong>MUST NOT contain embedded newlines</strong>.</li>
+<li>The server <strong>MUST NOT</strong> write anything to <strong>stdout</strong> that is not a valid MCP message.</li>
+<li>The client <strong>MUST NOT</strong> write anything to the server&rsquo;s <strong>stdin</strong> that is not a valid MCP message.</li>
+<li>The server <strong>MAY</strong> write UTF-8 to <strong>stderr</strong> for any logging: informational, debug or error.</li>
+<li>The client <strong>MAY</strong> capture, forward or ignore stderr, and <strong>SHOULD NOT</strong> assume stderr output means an error.</li>
+</ul>
+<div class="admonition danger">
+<p class="admonition-title">The classic stdio bug</p>
+<p>A server that calls <code>print("Starting up...")</code> writes a non-JSON line to <strong>stdout</strong>. The client tries to
+parse it as a JSON-RPC message and fails, often with a confusing error far from the cause. <strong>All logging
+in a stdio server goes to stderr.</strong> This is also the recommended replacement for the deprecated MCP
+Logging feature.</p>
+<p>Pretty-printed JSON breaks it too: embedded newlines split one message across several lines.</p>
+</div>
+<h3 id="direction-on-stdio">Direction on stdio<a class="headerlink" href="#direction-on-stdio" title="Permanent link">&para;</a></h3>
+<ul>
+<li>The client writes <strong>requests</strong> and <strong>notifications</strong> to stdin, and <strong>MUST NOT</strong> write responses.</li>
+<li>The server writes three kinds of message to stdout:</li>
+<li><strong>Responses</strong>, correlated by <code>id</code></li>
+<li><strong>Request-scoped notifications</strong> such as <code>notifications/progress</code></li>
+<li><strong>Subscription notifications</strong> for an active <code>subscriptions/listen</code>, which the client <strong>MUST</strong> correlate
+     using <code>io.modelcontextprotocol/subscriptionId</code> in <code>_meta</code>, because everything shares one channel</li>
+<li>The server <strong>MUST NOT</strong> write JSON-RPC <strong>requests</strong> to stdout.</li>
+</ul>
+<h3 id="metadata">Metadata<a class="headerlink" href="#metadata" title="Permanent link">&para;</a></h3>
+<p>stdio has no header layer. Everything, including version and capabilities, is <strong>inline</strong> in each message&rsquo;s
+<code>_meta</code>.</p>
+<h3 id="cancellation">Cancellation<a class="headerlink" href="#cancellation" title="Permanent link">&para;</a></h3>
+<p>There are no per-request streams to close, so to cancel an in-flight request the client <strong>MUST</strong> send
+<code>notifications/cancelled</code> with the request&rsquo;s id. The server <strong>SHOULD</strong> stop work as soon as practical and
+<strong>MUST NOT</strong> send further messages for that request.</p>
+<h3 id="shutdown">Shutdown<a class="headerlink" href="#shutdown" title="Permanent link">&para;</a></h3>
+<p>The client <strong>SHOULD</strong> shut down by:</p>
+<ol>
+<li><strong>Closing</strong> the server&rsquo;s <strong>stdin</strong>.</li>
+<li><strong>Waiting</strong> for the server to exit.</li>
+<li>If it doesn&rsquo;t exit in reasonable time, <strong>forcibly terminating</strong> it: on POSIX, escalating from <code>SIGTERM</code> to
+   <code>SIGKILL</code>; on Windows, <code>TerminateProcess</code> or Job Objects.</li>
+</ol>
+<p>Servers <strong>SHOULD</strong> exit promptly when stdin closes or reads return end-of-file. This is the primary, and only
+portable, graceful-shutdown signal. A server <strong>MAY</strong> initiate shutdown by closing its stdout and exiting.</p>
+<h3 id="unexpected-termination">Unexpected termination<a class="headerlink" href="#unexpected-termination" title="Permanent link">&para;</a></h3>
+<p>If the server process dies, the client <strong>SHOULD restart it</strong>. Because the protocol is stateless, in-flight
+requests are simply lost and can be retried against the new process. Active <code>subscriptions/listen</code> streams
+must be re-established; the server holds no subscription state across restarts.</p>
+<div class="admonition note">
+<p class="admonition-title">A stdio process is not a session</p>
+<p>Clients <strong>SHOULD NOT</strong> use an individual task, thread or conversation as the lifetime of the stdio process.
+One process can serve interleaved requests from many conversations, and the server must not treat process
+identity as conversation identity.</p>
+</div>
+<h3 id="authorization-on-stdio">Authorization on stdio<a class="headerlink" href="#authorization-on-stdio" title="Permanent link">&para;</a></h3>
+<p>The authorization framework is for HTTP. Implementations using stdio <strong>SHOULD NOT</strong> follow it, and instead
+<strong>retrieve credentials from the environment</strong>: environment variables or configuration passed at launch.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">"mcpServers"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="nt">"github"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">      </span><span class="nt">"command"</span><span class="p">:</span><span class="w"> </span><span class="s2">"npx"</span><span class="p">,</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">      </span><span class="nt">"args"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"-y"</span><span class="p">,</span><span class="w"> </span><span class="s2">"@modelcontextprotocol/server-github"</span><span class="p">],</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">      </span><span class="nt">"env"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"GITHUB_TOKEN"</span><span class="p">:</span><span class="w"> </span><span class="s2">"..."</span><span class="w"> </span><span class="p">}</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="p">}</span>
+</code></pre></div>
+<p>That configuration shape (used by Claude Desktop&rsquo;s <code>claude_desktop_config.json</code>) is <strong>host-specific</strong>, not part
+of the specification.</p>
+<h3 id="when-to-use-stdio">When to use stdio<a class="headerlink" href="#when-to-use-stdio" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Local</strong> integrations: filesystem, local git, local databases, developer tools.</li>
+<li><strong>Single user</strong>, one client per process.</li>
+<li><strong>Lowest overhead</strong>: no network, no HTTP stack.</li>
+<li><strong>Natural access control</strong>: only the launching client can talk to the process. The security best practices
+  recommend stdio for local servers precisely to <em>&ldquo;limit access to just the MCP client&rdquo;</em>.</li>
+</ul>
+<hr />
+<h2 id="3-streamable-http">3. Streamable HTTP<a class="headerlink" href="#3-streamable-http" title="Permanent link">&para;</a></h2>
+<h3 id="how-it-works_1">How it works<a class="headerlink" href="#how-it-works_1" title="Permanent link">&para;</a></h3>
+<p>In <strong>Streamable HTTP</strong>, the server is an <strong>independent process</strong> that can handle <strong>many clients</strong>.</p>
+<ul>
+<li>The server exposes <strong>one HTTP endpoint</strong>, the <strong>MCP endpoint</strong>, that accepts <strong>POST</strong>
+  (for example <code>https://example.com/mcp</code>).</li>
+<li><strong>Every</strong> JSON-RPC message from the client is its <strong>own HTTP POST</strong>.</li>
+<li>For each request the server replies with either <strong>a single JSON object</strong> or an <strong>SSE stream scoped to that
+  request</strong>.</li>
+<li>Server-to-client interactions (elicitation and friends) are embedded in results as <strong>MRTR</strong> input requests.</li>
+<li>Long-lived change notifications arrive on the response stream of a <strong><code>subscriptions/listen</code></strong> request.</li>
+</ul>
+<p>Streamable HTTP was introduced in <code>2025-03-26</code> to replace the two-endpoint <strong>HTTP+SSE</strong> transport, and was
+significantly reshaped in <code>2026-07-28</code>: the <strong>GET stream endpoint</strong> and <strong>protocol-level sessions</strong> were removed.</p>
+<h3 id="sending-messages">Sending messages<a class="headerlink" href="#sending-messages" title="Permanent link">&para;</a></h3>
+<ol>
+<li>The client <strong>MUST</strong> use <strong>POST</strong>.</li>
+<li>The client <strong>MUST</strong> send an <code>Accept</code> header listing <strong>both</strong> <code>application/json</code> and <code>text/event-stream</code>.</li>
+<li>The client <strong>MUST</strong> include the <strong>request metadata headers</strong> (section 3.3).</li>
+<li>The body <strong>MUST</strong> be a <strong>single</strong> JSON-RPC request or notification. The client <strong>MUST NOT</strong> send responses.</li>
+<li>If the body is a <strong>notification</strong>:<ul>
+<li>accepted → <strong><code>202 Accepted</code></strong>, <strong>no body</strong>;</li>
+<li>not accepted → an HTTP error such as <code>400</code>, optionally with a JSON-RPC error body that has no <code>id</code>.</li>
+</ul>
+</li>
+<li>If the body is a <strong>request</strong>, the server <strong>MUST</strong> return either <code>Content-Type: application/json</code> or
+   <code>Content-Type: text/event-stream</code>, and the client <strong>MUST</strong> support both.</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">No client notifications over HTTP in the core protocol</p>
+<p>The only client-sent notification in the core, <code>notifications/cancelled</code>, is used only on <strong>stdio</strong>. On
+Streamable HTTP, <strong>closing the response stream is the cancellation</strong>.</p>
+</div>
+<h3 id="receiving-messages">Receiving messages<a class="headerlink" href="#receiving-messages" title="Permanent link">&para;</a></h3>
+<p>When the server chooses an <strong>SSE</strong> response:</p>
+<ul>
+<li>It <strong>MAY</strong> send <strong>notifications</strong> before the final response (for example <code>notifications/progress</code>). These
+  <strong>MUST relate to the originating request</strong>.</li>
+<li>It <strong>MUST NOT</strong> send independent JSON-RPC <strong>requests</strong> on the stream. That was allowed in <code>2025-03-26</code> through
+  <code>2025-11-25</code> and is <strong>no longer part of the protocol</strong>.</li>
+<li>The final JSON-RPC <strong>response SHOULD terminate</strong> the stream.</li>
+</ul>
+<p><strong>Streams are not resumable.</strong> <code>Last-Event-ID</code> is not supported. If a response stream breaks, the in-flight
+request is lost and the client <strong>MUST</strong> re-issue it as a <strong>new request with a new id</strong>.</p>
+<p>Operational details worth knowing:</p>
+<ul>
+<li>Servers <strong>SHOULD</strong> send <code>X-Accel-Buffering: no</code> on SSE responses, so reverse proxies such as nginx don&rsquo;t buffer
+  events and delay them.</li>
+<li>For long-lived streams (especially <code>subscriptions/listen</code>), servers are encouraged to send periodic <strong>SSE comment
+  lines</strong> (a line starting with <code>:</code>) as <strong>keep-alives</strong>, so idle connections aren&rsquo;t closed by intermediaries.
+  Clients must ignore them.</li>
+</ul>
+<pre class="mermaid"><code>sequenceDiagram
+    participant Client
+    participant Server
+    Note over Client,Server: Simple response
+    Client-&gt;&gt;Server: POST tools/call
+    Server--&gt;&gt;Client: 200 application/json, JSON-RPC response
+    Note over Client,Server: Streaming response
+    Client-&gt;&gt;Server: POST tools/call
+    Server--&gt;&gt;Client: 200 text/event-stream
+    Server--&gt;&gt;Client: SSE: notifications/progress
+    Server--&gt;&gt;Client: SSE: JSON-RPC response (stream closes)
+    Note over Client,Server: Notification
+    Client-&gt;&gt;Server: POST (JSON-RPC notification)
+    Server--&gt;&gt;Client: 202 Accepted</code></pre>
+<h3 id="33-request-metadata-headers-2026">3.3 Request metadata headers <span class="new-2026">2026</span><a class="headerlink" href="#33-request-metadata-headers-2026" title="Permanent link">&para;</a></h3>
+<p>Streamable HTTP <strong>mirrors selected body fields into HTTP headers</strong>, so load balancers, gateways, WAFs and
+observability tools can route and inspect traffic <strong>without parsing the JSON body</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>Header</th>
+<th>Source field</th>
+<th>Required on</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>MCP-Protocol-Version</code></td>
+<td><code>_meta["io.modelcontextprotocol/protocolVersion"]</code></td>
+<td><strong>Every POST</strong></td>
+</tr>
+<tr>
+<td><code>Mcp-Method</code></td>
+<td><code>method</code></td>
+<td><strong>All requests</strong></td>
+</tr>
+<tr>
+<td><code>Mcp-Name</code></td>
+<td><code>params.name</code> or <code>params.uri</code></td>
+<td><strong><code>tools/call</code>, <code>resources/read</code>, <code>prompts/get</code></strong></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nf">POST</span> <span class="nn">/mcp</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="na">Accept</span><span class="o">:</span> <span class="l">application/json, text/event-stream</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="na">MCP-Protocol-Version</span><span class="o">:</span> <span class="l">2026-07-28</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="na">Mcp-Method</span><span class="o">:</span> <span class="l">tools/call</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="na">Mcp-Name</span><span class="o">:</span> <span class="l">get_weather</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="p">{</span><span class="nt">"jsonrpc"</span><span class="p">:</span><span class="s2">"2.0"</span><span class="p">,</span><span class="nt">"id"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="nt">"method"</span><span class="p">:</span><span class="s2">"tools/call"</span><span class="p">,</span><span class="nt">"params"</span><span class="p">:{</span><span class="nt">"name"</span><span class="p">:</span><span class="s2">"get_weather"</span><span class="p">,</span><span class="w"> </span><span class="err">...</span><span class="p">}}</span>
+</code></pre></div>
+<p><strong>Version handling:</strong></p>
+<ul>
+<li><code>MCP-Protocol-Version</code> <strong>MUST match</strong> the body&rsquo;s protocol version; otherwise <strong><code>400</code></strong> + <code>HeaderMismatch</code>
+  (<strong><code>-32020</code></strong>).</li>
+<li>Unsupported version → <strong><code>400</code></strong> + <code>UnsupportedProtocolVersionError</code> (<strong><code>-32022</code></strong>) listing supported versions.</li>
+<li>Unknown <strong>method</strong> → <strong><code>404 Not Found</code></strong> + JSON-RPC <strong><code>-32601</code></strong> (Method not found). The JSON-RPC body is what
+  distinguishes this from a <code>404</code> from a legacy server that doesn&rsquo;t host the endpoint at all.</li>
+<li>A server supporting clients older than <code>2025-06-18</code> (before the header existed) <strong>MAY</strong> treat a missing header as
+  <code>2025-03-26</code>; otherwise it <strong>MUST</strong> reject requests without it.</li>
+</ul>
+<h3 id="custom-headers-from-tool-parameters">Custom headers from tool parameters<a class="headerlink" href="#custom-headers-from-tool-parameters" title="Permanent link">&para;</a></h3>
+<p>A server <strong>MAY</strong> mark a tool parameter with <strong><code>x-mcp-header</code></strong> in its <code>inputSchema</code>. Clients <strong>MUST support this</strong>:
+when calling that tool over Streamable HTTP, they add a <strong><code>Mcp-Param-{Name}</code></strong> header carrying the argument value.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">"region"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w"> </span><span class="nt">"x-mcp-header"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Region"</span><span class="w"> </span><span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="err">Mcp-Param-Region: us-west1</span>
+</code></pre></div>
+<p>This lets infrastructure route by region or tenant without reading the body.</p>
+<p><strong>Constraints on the annotation</strong> (a violating tool definition is <strong>invalid</strong>, and a client <strong>MUST exclude that tool</strong>
+from its <code>tools/list</code> result, <strong>SHOULD log a warning</strong>, and keep using the valid ones):</p>
+<ul>
+<li>non-empty, valid HTTP token characters, no CR/LF</li>
+<li>case-insensitively <strong>unique</strong> within the schema</li>
+<li>only on <strong>primitive</strong> types: <code>string</code>, <code>integer</code>, <code>boolean</code>. <strong>Not <code>number</code>.</strong> Integers must be within the JavaScript
+  safe range (±2⁵³−1)</li>
+<li>only on properties <strong>statically reachable</strong> through a chain of <code>properties</code> keys: not through <code>items</code>, <code>oneOf</code> /
+  <code>anyOf</code> / <code>allOf</code> / <code>not</code>, <code>if</code>/<code>then</code>/<code>else</code>, or <code>$ref</code></li>
+</ul>
+<p><strong>Value encoding:</strong> strings as-is, integers as decimal, booleans as lowercase <code>true</code>/<code>false</code>. A value that isn&rsquo;t safe
+plain ASCII (non-ASCII, control characters, leading/trailing whitespace) <strong>MUST</strong> be Base64-encoded with a sentinel:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="err">Mcp-Param-Greeting: =?base64?SGVsbG8sIOS4lueVjA==?=</span>
+</code></pre></div>
+<p>The same sentinel encoding applies to <code>Mcp-Name</code> for names or URIs outside the safe character set. A plain value that
+happens to look like the sentinel must itself be encoded, to avoid ambiguity.</p>
+<p>A <code>null</code> or absent argument → the client <strong>omits</strong> the header. A present argument with the header missing → the server
+<strong>MUST reject</strong> the request.</p>
+<div class="admonition warning">
+<p class="admonition-title">Headers are visible to intermediaries</p>
+<p>Server developers <strong>SHOULD NOT</strong> mark <strong>sensitive</strong> parameters (passwords, API keys, tokens, PII) with
+<code>x-mcp-header</code>. Proxies, load balancers and logs see headers.</p>
+</div>
+<h3 id="server-validation-why-mismatches-are-rejected">Server validation: why mismatches are rejected<a class="headerlink" href="#server-validation-why-mismatches-are-rejected" title="Permanent link">&para;</a></h3>
+<p>Servers that process the body <strong>MUST reject</strong> any request where a mirrored header disagrees with the body, with
+<strong><code>400 Bad Request</code></strong> and <strong><code>-32020</code> HeaderMismatch</strong>. Failure conditions include a missing required header, a value
+mismatch (after decoding Base64 values), and invalid characters.</p>
+<p>The reason is a classic security bug: <strong>two components trusting two different sources of truth</strong>. Imagine a gateway
+that authorizes by <code>Mcp-Name: read_report</code> while the server executes <code>params.name: "delete_all_reports"</code> from the
+body. Forcing headers and body to match makes the check and the action refer to the same thing.</p>
+<p>Intermediaries that enforce policy on mirrored headers <strong>SHOULD</strong> verify the protocol version requires header–body
+validation, and reject requests with older or missing versions rather than trusting unvalidated headers.</p>
+<h3 id="security-and-the-endpoint">Security and the endpoint<a class="headerlink" href="#security-and-the-endpoint" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Servers <strong>MUST validate the <code>Origin</code> header</strong> on all incoming connections to prevent <strong>DNS rebinding</strong>. If
+   <code>Origin</code> is present and invalid → <strong><code>403 Forbidden</code></strong>.</li>
+<li>When running <strong>locally</strong>, servers <strong>SHOULD bind to <code>127.0.0.1</code></strong>, not <code>0.0.0.0</code>.</li>
+<li>Servers <strong>SHOULD</strong> implement proper <strong>authentication</strong> for all connections.</li>
+</ol>
+<p><strong>DNS rebinding</strong>, explained: you visit <code>evil.example</code> in a browser. Its DNS record first points to the attacker&rsquo;s
+server (which serves JavaScript), then is quickly changed to <code>127.0.0.1</code>. The browser&rsquo;s same-origin policy considers
+it the same origin (<code>evil.example</code>), so that JavaScript can now send requests to a service on <strong>your localhost</strong>, such
+as an unauthenticated local MCP server bound to a port. Checking <code>Origin</code> (which will say <code>evil.example</code>) and binding
+only to loopback defeat it.</p>
+<h3 id="cancellation-on-http">Cancellation on HTTP<a class="headerlink" href="#cancellation-on-http" title="Permanent link">&para;</a></h3>
+<p><strong>Closing the SSE response stream is cancellation.</strong> The server <strong>MUST</strong> treat a client disconnect as cancellation of
+that request, <strong>SHOULD</strong> stop work, and <strong>MUST NOT</strong> send further messages for it. No <code>notifications/cancelled</code> is needed
+or expected. Because every request has its own stream, the disconnect is unambiguous.</p>
+<h3 id="authorization-on-http">Authorization on HTTP<a class="headerlink" href="#authorization-on-http" title="Permanent link">&para;</a></h3>
+<p>Implementations using HTTP <strong>SHOULD</strong> conform to the MCP <strong>OAuth 2.1</strong> authorization framework. Access tokens go in
+<code>Authorization: Bearer &lt;token&gt;</code> on <strong>every</strong> request, and <strong>never in the query string</strong>. See
+<a href="../../domain-4/authorization/">Authorization with OAuth 2.1</a>.</p>
+<h3 id="legacy-http-traffic">Legacy HTTP traffic<a class="headerlink" href="#legacy-http-traffic" title="Permanent link">&para;</a></h3>
+<p>A server that supports only <code>2026-07-28</code> and receives old-style traffic <strong>SHOULD</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Legacy traffic</th>
+<th>Response</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>GET</code> or <code>DELETE</code> to the MCP endpoint</td>
+<td><strong><code>405 Method Not Allowed</code></strong></td>
+</tr>
+<tr>
+<td><code>Mcp-Session-Id</code> header</td>
+<td><strong>Ignore it</strong>; do not mint or echo session IDs</td>
+</tr>
+<tr>
+<td><code>Last-Event-ID</code> header</td>
+<td><strong>Ignore it</strong>; streams are not resumable</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="4-choosing-a-transport">4. Choosing a transport<a class="headerlink" href="#4-choosing-a-transport" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Consideration</th>
+<th><strong>stdio</strong></th>
+<th><strong>Streamable HTTP</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Location</td>
+<td>Same machine</td>
+<td>Anywhere on the network</td>
+</tr>
+<tr>
+<td>Process model</td>
+<td>Client launches server</td>
+<td>Server runs independently</td>
+</tr>
+<tr>
+<td>Clients per server</td>
+<td>Typically one</td>
+<td>Many</td>
+</tr>
+<tr>
+<td>Framing</td>
+<td>Newline-delimited JSON</td>
+<td>One POST per message; JSON or SSE reply</td>
+</tr>
+<tr>
+<td>Metadata</td>
+<td>Inline <code>_meta</code> only</td>
+<td><code>_meta</code> <strong>plus</strong> mirrored headers</td>
+</tr>
+<tr>
+<td>Cancellation</td>
+<td><code>notifications/cancelled</code></td>
+<td>Close the response stream</td>
+</tr>
+<tr>
+<td>Subscription correlation</td>
+<td><strong>MUST</strong> use <code>subscriptionId</code> (shared channel)</td>
+<td>One stream per listen request (id still carried)</td>
+</tr>
+<tr>
+<td>Credentials</td>
+<td>Environment</td>
+<td>OAuth 2.1 bearer tokens</td>
+</tr>
+<tr>
+<td>Logging</td>
+<td>stderr</td>
+<td>Server&rsquo;s own logging / OpenTelemetry</td>
+</tr>
+<tr>
+<td>Key security measures</td>
+<td>Sandboxing, consent before launch</td>
+<td>Origin validation, loopback bind locally, auth, token audience</td>
+</tr>
+<tr>
+<td>Scaling</td>
+<td>N/A (per user)</td>
+<td>Stateless: any instance serves any request</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition tip">
+<p class="admonition-title">Exam reflex</p>
+<p><strong>Local, single-user, same machine → stdio.</strong> <strong>Remote, multi-user, networked → Streamable HTTP.</strong></p>
+</div>
+<hr />
+<h2 id="5-custom-transports">5. Custom transports<a class="headerlink" href="#5-custom-transports" title="Permanent link">&para;</a></h2>
+<p>Clients and servers <strong>MAY</strong> implement custom transports. They <strong>MUST</strong> preserve:</p>
+<ul>
+<li>the <strong>JSON-RPC message format</strong>,</li>
+<li>the <strong>message patterns</strong> (request/response, MRTR, subscribe/notify), and</li>
+<li>the <strong>per-request metadata model</strong>.</li>
+</ul>
+<p>They <strong>SHOULD</strong> document connection establishment, framing and cancellation.</p>
+<p>Custom transports over a <strong>reliable bidirectional byte stream</strong> (Unix domain sockets, TCP) <strong>SHOULD reuse the stdio
+framing</strong>, meaning newline-delimited JSON-RPC. Only the subprocess-specific parts (launch, stderr, shutdown by closing
+stdin, restart) need equivalents.</p>
+<hr />
+<h2 id="6-the-deprecated-httpsse-transport">6. The deprecated HTTP+SSE transport<a class="headerlink" href="#6-the-deprecated-httpsse-transport" title="Permanent link">&para;</a></h2>
+<p>For recognition only. The <code>2024-11-05</code> <strong>HTTP+SSE</strong> transport used <strong>two endpoints</strong>: a GET endpoint that opened an SSE
+stream whose first event (<code>endpoint</code>) told the client where to POST, and a separate POST endpoint. It has been deprecated
+since <code>2025-03-26</code> and is formally <strong>Deprecated</strong> under the lifecycle policy, eligible for removal three months after
+SEP-2596 reaches Final. <strong>Migrate to Streamable HTTP.</strong></p>
+<p>A client supporting it falls back like this: POST to the URL; on <code>400</code>/<code>404</code>/<code>405</code> <strong>without</strong> a recognized modern
+JSON-RPC error body, issue a <code>GET</code> and wait for an <code>endpoint</code> event.</p>
+<hr />
+<h2 id="7-recap">7. Recap<a class="headerlink" href="#7-recap" title="Permanent link">&para;</a></h2>
+<ul>
+<li>A transport is a <strong>binding</strong>: framing, delivery, metadata placement, cancellation. <strong>Semantics are identical</strong> on every transport.</li>
+<li><strong>stdio:</strong> client launches server; <strong>newline-delimited</strong> JSON on stdin/stdout, no embedded newlines; <strong>nothing but MCP on
+  stdout</strong>; logs to <strong>stderr</strong>; cancel with <strong><code>notifications/cancelled</code></strong>; shut down by <strong>closing stdin</strong>, then SIGTERM →
+  SIGKILL; restart on crash; credentials from the <strong>environment</strong>.</li>
+<li><strong>Streamable HTTP:</strong> one MCP endpoint; <strong>every message is a POST</strong>; <code>Accept</code> lists JSON and SSE; reply is <strong>JSON or a
+  request-scoped SSE stream</strong>; notifications get <strong>202</strong>; <strong>no server requests</strong> on streams; <strong>not resumable</strong>; <strong>closing
+  the stream cancels</strong>.</li>
+<li>Required headers: <strong><code>MCP-Protocol-Version</code></strong> (all), <strong><code>Mcp-Method</code></strong> (all requests), <strong><code>Mcp-Name</code></strong> (<code>tools/call</code>,
+  <code>resources/read</code>, <code>prompts/get</code>). Mismatch → <strong>400 + <code>-32020</code></strong>. Unknown method → <strong>404 + <code>-32601</code></strong>.</li>
+<li><code>x-mcp-header</code> → <code>Mcp-Param-{Name}</code>; primitives only (no <code>number</code>); Base64 sentinel <code>=?base64?…?=</code>; never for secrets.</li>
+<li><strong>Validate <code>Origin</code></strong> (invalid → 403), <strong>bind to 127.0.0.1</strong> locally, authenticate.</li>
+<li>Legacy <code>GET</code>/<code>DELETE</code> → <strong>405</strong>; ignore <code>Mcp-Session-Id</code> and <code>Last-Event-ID</code>.</li>
+<li>HTTP+SSE is <strong>deprecated</strong>.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../schemas/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Schemas &amp; Structured Data">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Schemas & Structured Data
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../versioning-discovery/" class="md-footer__link md-footer__link--next" aria-label="Next: Versioning &amp; Discovery">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Versioning & Discovery
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "content.code.annotate", "content.tabs.link", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.top", "navigation.path", "navigation.footer", "navigation.tracking", "search.highlight", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
