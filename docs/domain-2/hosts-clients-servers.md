@@ -170,7 +170,7 @@ The limits matter as much as the responsibilities:
 ## 5. Isolation and the four design principles
 
 The participant boundaries implement the design principles from
-[Interoperability & Value](../domain-1/interoperability.md#the-design-principles-behind-the-value):
+[Interoperability & Value](../domain-1/interoperability.md#4-the-design-principles-behind-the-value):
 
 | Principle | How the architecture delivers it |
 | --- | --- |
