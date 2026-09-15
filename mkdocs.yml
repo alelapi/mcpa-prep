@@ -1,0 +1,147 @@
+site_name: MCPA Prep Course
+site_description: "A complete, self-hosted preparation course for the Linux Foundation Model Context Protocol Associate (MCPA) certification"
+site_author: Alessio Lapi
+repo_name: mcpa-prep
+repo_url: https://github.com/alelapi/mcpa-prep
+site_url: ''
+
+theme:
+  name: material
+  icon:
+    repo: fontawesome/brands/github
+  palette:
+    - scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - content.code.copy
+    - content.code.annotate
+    - content.tabs.link
+    - navigation.indexes
+    - navigation.sections
+    - navigation.tabs
+    - navigation.top
+    - navigation.path
+    - navigation.footer
+    - navigation.tracking
+    - search.highlight
+    - search.suggest
+    - toc.follow
+
+extra_css:
+  - 'assets/css/app.css'
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - meta
+  - smarty
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+plugins:
+  - search
+
+nav:
+  - Home: index.md
+  - Exam Guide:
+    - exam/index.md
+    - Official Blueprint: exam/blueprint.md
+    - What Changed in 2026-07-28: exam/whats-new.md
+    - Study Plan: exam/study-plan.md
+    - Official Resources: exam/resources.md
+    - Exam-Day Strategy: exam/exam-day.md
+    - Glossary: exam/glossary.md
+  - 1. Fundamentals (16%):
+    - domain-1/index.md
+    - Why MCP Exists: domain-1/purpose-and-scope.md
+    - Core Concepts: domain-1/core-concepts.md
+    - Interoperability & Value: domain-1/interoperability.md
+    - Quiz: domain-1/quiz.md
+  - 2. Architecture (14%):
+    - domain-2/index.md
+    - Hosts, Clients & Servers: domain-2/hosts-clients-servers.md
+    - JSON-RPC Messages & _meta: domain-2/messages.md
+    - Schemas & Structured Data: domain-2/schemas.md
+    - Transports: domain-2/transports.md
+    - Versioning & Discovery: domain-2/versioning-discovery.md
+    - Model Interaction Flow: domain-2/interaction-flow.md
+    - Quiz: domain-2/quiz.md
+  - 3. Interactions (26%):
+    - domain-3/index.md
+    - Tools & the Invocation Lifecycle: domain-3/tools.md
+    - Resources & Prompts: domain-3/resources-prompts.md
+    - Multi Round-Trip Requests & Elicitation: domain-3/mrtr-elicitation.md
+    - Subscriptions, Progress & Cancellation: domain-3/subscriptions-progress-cancellation.md
+    - Error Handling: domain-3/error-handling.md
+    - Caching, Pagination & Completion: domain-3/utilities.md
+    - "Deprecated: Sampling, Roots & Logging": domain-3/deprecated-features.md
+    - Quiz: domain-3/quiz.md
+  - 4. Security (24%):
+    - domain-4/index.md
+    - Trust Boundaries: domain-4/trust-boundaries.md
+    - Authorization with OAuth 2.1: domain-4/authorization.md
+    - Permissions & Consent: domain-4/permissions-consent.md
+    - Attacks & Mitigations: domain-4/attacks-mitigations.md
+    - Auditability & Observability: domain-4/auditability.md
+    - Quiz: domain-4/quiz.md
+  - 5. Ecosystem (20%):
+    - domain-5/index.md
+    - Roles, Responsibilities & Adoption: domain-5/roles-adoption.md
+    - Operational Use Cases: domain-5/operational-use-cases.md
+    - Extensions: domain-5/extensions.md
+    - Ecosystem & Portability: domain-5/ecosystem-portability.md
+    - Quiz: domain-5/quiz.md
+  - Hands-On Labs:
+    - labs/index.md
+    - "Lab 0: Environment Setup": labs/00-setup.md
+    - "Lab 1: Speak MCP by Hand": labs/01-raw-json-rpc.md
+    - "Lab 2: Build a Server": labs/02-build-server.md
+    - "Lab 3: Build a Client": labs/03-build-client.md
+    - "Lab 4: Streamable HTTP": labs/04-streamable-http.md
+    - "Lab 5: Elicitation & MRTR": labs/05-elicitation-mrtr.md
+    - "Lab 6: Security Hardening": labs/06-security-hardening.md
+  - Practice Exams:
+    - practice/index.md
+    - Mock Exam 1: practice/mock-exam-1.md
+    - Mock Exam 2: practice/mock-exam-2.md
+    - Rapid-Fire Flashcards: practice/flashcards.md
