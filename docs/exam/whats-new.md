@@ -44,6 +44,12 @@ this client to A) or a **shared session store** (Redis, a database) that every i
 consults. Both are operational pain. Sticky sessions break autoscaling and failover. A
 shared store is a new dependency on every request's path.
 
+SEP-2575 ("Make MCP Stateless"), which drove the redesign, names three problems: **scalability**
+(a plain round-robin load balancer can't be used, forcing sticky sessions), **resilience** (if the
+instance holding a session fails, the session is lost and the handshake must be redone), and
+**implementation complexity** (servers must create, manage and garbage-collect per-client session
+state, a common source of bugs and memory leaks).
+
 ### What MCP looks like now
 
 In `2026-07-28` there is **no handshake**. Every request is self-contained:
@@ -307,14 +313,15 @@ removal (ninety days under an expedited exception).
 | `includeContext: "thisServer"` / `"allServers"` | Omit it, or use `"none"` | No later than Sampling itself |
 | **HTTP+SSE transport** (from `2024-11-05`) | Streamable HTTP | Three months after SEP-2596 is Final |
 
-Why deprecate sampling, roots and logging? Each was a way for the **server** to reach back
-into the **client**, and each turned out to be better served elsewhere:
+Why deprecate sampling, roots and logging? SEP-2577 gives the criteria: the specification *"aims to remain minimal and
+focused"*, and these features showed **low adoption**, **overlap with existing alternatives**, or **disproportionate
+implementation burden**. Specifically:
 
-- **Sampling** made servers depend on whatever model the client happened to have. Servers
-  that need a model can call a provider API directly, with predictable behavior.
-- **Roots** were advisory only (the protocol never enforced them) and duplicated what a
-  tool argument or configuration setting expresses more clearly.
-- **Logging** reinvented what `stderr` and OpenTelemetry already do well.
+- **Sampling** is complex to implement correctly (human review, model selection, tool loops), few clients support it, and
+  servers can call LLM provider APIs directly.
+- **Roots** have vague, advisory semantics that servers need not respect, low adoption, and more explicit alternatives (tool
+  parameters, resource URIs, configuration).
+- **Logging** duplicates mature infrastructure (`stderr`, OpenTelemetry) at a cost in implementation surface.
 
 The details are in [Deprecated Features](../domain-3/deprecated-features.md).
 
