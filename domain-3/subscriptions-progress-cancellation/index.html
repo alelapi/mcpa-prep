@@ -23,7 +23,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.1">
     
     
       
@@ -31,10 +31,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -3230,7 +3230,7 @@ correlate.</p>
 </tr>
 <tr>
 <td><strong>Server</strong> (e.g. shutdown)</td>
-<td><strong>SHOULD</strong> send a successful <strong>response</strong> to the listen request, then close</td>
+<td>Graceful: <strong>SHOULD</strong> send a successful <strong>response</strong> to the listen request, then close. Abrupt teardown without a response: <strong>MUST</strong> send <code>notifications/cancelled</code> referencing the listen id</td>
 </tr>
 <tr>
 <td><strong>Transport</strong></td>
@@ -3243,9 +3243,23 @@ correlate.</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">{</span><span class="w"> </span><span class="nt">"jsonrpc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">,</span><span class="w"> </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="nt">"result"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"resultType"</span><span class="p">:</span><span class="w"> </span><span class="s2">"complete"</span><span class="p">,</span><span class="w"> </span><span class="nt">"_meta"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nt">"io.modelcontextprotocol/subscriptionId"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="p">}</span>
 </code></pre></div>
 <p>This lets the client distinguish <strong>&ldquo;ended cleanly&rdquo;</strong> (a response arrived) from <strong>&ldquo;connection dropped&rdquo;</strong> (no response),
-which the client <strong>MAY</strong> treat as a reason to reconnect. The cancellation page adds that a server <strong>MUST</strong> send
-<code>notifications/cancelled</code> referencing the listen request id when it tears down a subscription stream, and that this
-is the <strong>only</strong> purpose for which servers send <code>notifications/cancelled</code>.</p>
+which the client <strong>MAY</strong> treat as a reason to reconnect.</p>
+<div class="admonition warning">
+<p class="admonition-title">SHOULD send a response vs. MUST send <code>notifications/cancelled</code> — two different signals</p>
+<p>The spec makes two normative statements about a server ending a listen stream, on two pages:</p>
+<ul>
+<li><strong>Subscriptions page:</strong> on teardown the server <strong>SHOULD</strong> send a successful <strong>response</strong> to the
+  listen request (graceful closure), then close the stream.</li>
+<li><strong>Cancellation page:</strong> a server <strong>MUST</strong> send <code>notifications/cancelled</code> referencing the listen
+  request id when it tears down a subscription stream, and <strong>MUST NOT</strong> send
+  <code>notifications/cancelled</code> for any other purpose.</li>
+</ul>
+<p>Read them together: the <strong>completion response is the graceful path</strong>; a server that tears the
+stream down <strong>without</strong> responding signals it with <code>notifications/cancelled</code> instead (a request
+that has been answered is no longer in progress, so it can&rsquo;t also be cancelled). For the exam:
+<em>graceful closure</em> → <strong>SHOULD send a response</strong>; <em>server-sent <code>notifications/cancelled</code></em> →
+<strong>only ever ends a listen stream</strong>, never any other request.</p>
+</div>
 <p>On <strong>stdio</strong>, if the connection is terminated and re-established, the client <strong>MUST re-send</strong>
 <code>subscriptions/listen</code>. The server holds <strong>no subscription state</strong> across reconnections.</p>
 <div class="admonition note">
@@ -3444,7 +3458,8 @@ after reconnecting.</p>
   JSON-RPC id</strong>; stdio clients <strong>MUST</strong> correlate by it.</li>
 <li><code>progress</code> and <code>message</code> notifications stay on <strong>their own request&rsquo;s</strong> stream.</li>
 <li>Ends by: client closing the stream (HTTP) or sending <code>notifications/cancelled</code> (stdio); server sending a completion
-  <strong>response</strong> (graceful); transport loss. stdio reconnect → <strong>re-send listen</strong>. Notifications are best effort.</li>
+  <strong>response</strong> (graceful, SHOULD) or <code>notifications/cancelled</code> (teardown without a response, MUST); transport loss.
+  stdio reconnect → <strong>re-send listen</strong>. Notifications are best effort.</li>
 </ul>
 <p><strong>Progress</strong></p>
 <ul>
@@ -3557,10 +3572,10 @@ after reconnecting.</p>
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "content.code.annotate", "content.tabs.link", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.top", "navigation.path", "navigation.footer", "navigation.tracking", "search.highlight", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "content.code.annotate", "content.tabs.link", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.top", "navigation.path", "navigation.footer", "navigation.tracking", "search.highlight", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
       
     
   </body>

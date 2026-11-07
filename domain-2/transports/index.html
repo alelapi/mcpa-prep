@@ -23,7 +23,7 @@
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.1">
     
     
       
@@ -31,10 +31,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.ec1eaa64.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.57a0d79d.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.fb2fffe2.min.css">
       
       
 
@@ -3611,6 +3611,14 @@ stdin, restart) need equivalents.</p>
 stream whose first event (<code>endpoint</code>) told the client where to POST, and a separate POST endpoint. It has been deprecated
 since <code>2025-03-26</code> and is formally <strong>Deprecated</strong> under the lifecycle policy, eligible for removal three months after
 SEP-2596 reaches Final. <strong>Migrate to Streamable HTTP.</strong></p>
+<div class="admonition note">
+<p class="admonition-title">Why only three months? Doesn&rsquo;t the policy require twelve?</p>
+<p>The twelve-month minimum deprecation window is measured <strong>from the revision that first marks the
+feature Deprecated</strong> — for HTTP+SSE that was <code>2025-03-26</code>, so the floor elapsed long before the
+lifecycle policy existed. SEP-2596&rsquo;s transition provisions reclassify such already-deprecated
+features and give them a grace period of three months after the SEP reaches Final. No conflict
+with the twelve-month rule in <a href="../../domain-1/interoperability/">Domain 1</a>.</p>
+</div>
 <p>A client supporting it falls back like this: POST to the URL; on <code>400</code>/<code>404</code>/<code>405</code> <strong>without</strong> a recognized modern
 JSON-RPC error body, issue a <code>GET</code> and wait for an <code>endpoint</code> event.</p>
 <hr />
@@ -3727,10 +3735,10 @@ JSON-RPC error body, issue a <code>GET</code> and wait for an <code>endpoint</co
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "content.code.annotate", "content.tabs.link", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.top", "navigation.path", "navigation.footer", "navigation.tracking", "search.highlight", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["content.code.copy", "content.code.annotate", "content.tabs.link", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.top", "navigation.path", "navigation.footer", "navigation.tracking", "search.highlight", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.d7400e89.min.js"></script>
+      <script src="../../assets/javascripts/bundle.a5f9d56c.min.js"></script>
       
     
   </body>
