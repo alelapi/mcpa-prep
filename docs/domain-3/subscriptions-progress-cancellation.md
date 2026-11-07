@@ -118,7 +118,7 @@ correlate.
 | --- | --- |
 | **Client** on Streamable HTTP | Closes the SSE stream |
 | **Client** on stdio | Sends `notifications/cancelled` referencing the listen request's id |
-| **Server** (e.g. shutdown) | **SHOULD** send a successful **response** to the listen request, then close |
+| **Server** (e.g. shutdown) | Graceful: **SHOULD** send a successful **response** to the listen request, then close. Abrupt teardown without a response: **MUST** send `notifications/cancelled` referencing the listen id |
 | **Transport** | HTTP timeout, TCP disconnect, stdio process exit |
 
 **Graceful closure.** When the server ends a subscription itself, it **SHOULD** respond to the original
@@ -129,9 +129,22 @@ correlate.
 ```
 
 This lets the client distinguish **"ended cleanly"** (a response arrived) from **"connection dropped"** (no response),
-which the client **MAY** treat as a reason to reconnect. The cancellation page adds that a server **MUST** send
-`notifications/cancelled` referencing the listen request id when it tears down a subscription stream, and that this
-is the **only** purpose for which servers send `notifications/cancelled`.
+which the client **MAY** treat as a reason to reconnect.
+
+!!! warning "SHOULD send a response vs. MUST send `notifications/cancelled` — two different signals"
+    The spec makes two normative statements about a server ending a listen stream, on two pages:
+
+    - **Subscriptions page:** on teardown the server **SHOULD** send a successful **response** to the
+      listen request (graceful closure), then close the stream.
+    - **Cancellation page:** a server **MUST** send `notifications/cancelled` referencing the listen
+      request id when it tears down a subscription stream, and **MUST NOT** send
+      `notifications/cancelled` for any other purpose.
+
+    Read them together: the **completion response is the graceful path**; a server that tears the
+    stream down **without** responding signals it with `notifications/cancelled` instead (a request
+    that has been answered is no longer in progress, so it can't also be cancelled). For the exam:
+    *graceful closure* → **SHOULD send a response**; *server-sent `notifications/cancelled`* →
+    **only ever ends a listen stream**, never any other request.
 
 On **stdio**, if the connection is terminated and re-established, the client **MUST re-send**
 `subscriptions/listen`. The server holds **no subscription state** across reconnections.
@@ -338,7 +351,8 @@ after reconnecting.
   JSON-RPC id**; stdio clients **MUST** correlate by it.
 - `progress` and `message` notifications stay on **their own request's** stream.
 - Ends by: client closing the stream (HTTP) or sending `notifications/cancelled` (stdio); server sending a completion
-  **response** (graceful); transport loss. stdio reconnect → **re-send listen**. Notifications are best effort.
+  **response** (graceful, SHOULD) or `notifications/cancelled` (teardown without a response, MUST); transport loss.
+  stdio reconnect → **re-send listen**. Notifications are best effort.
 
 **Progress**
 

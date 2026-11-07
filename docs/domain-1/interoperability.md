@@ -172,7 +172,8 @@ it responds with the versions it does support, and the client retries.
 compatible changes) or **Final** (complete, frozen).
 
 **Feature lifecycle.** A feature is **Active**, **Deprecated** (still works; new implementations
-shouldn't adopt it; at least twelve months before removal eligibility) or **Removed**. A public
+shouldn't adopt it; at least twelve months before removal eligibility, measured from the revision
+that first marks the feature Deprecated — not from when the deprecation SEP reaches Final) or **Removed**. A public
 [deprecated features registry](https://modelcontextprotocol.io/specification/2026-07-28/deprecated)
 lists every deprecation with its migration path.
 

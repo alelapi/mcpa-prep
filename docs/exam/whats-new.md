@@ -313,6 +313,11 @@ removal (ninety days under an expedited exception).
 | `includeContext: "thisServer"` / `"allServers"` | Omit it, or use `"none"` | No later than Sampling itself |
 | **HTTP+SSE transport** (from `2024-11-05`) | Streamable HTTP | Three months after SEP-2596 is Final |
 
+The HTTP+SSE row is not an exception to the twelve-month floor: the window counts from the revision
+that first marked the feature deprecated (`2025-03-26` for HTTP+SSE), which elapsed before the
+lifecycle policy existed. SEP-2596's transition provisions reclassify it as Deprecated and give it
+three months after the SEP reaches Final before it is eligible for removal.
+
 Why deprecate sampling, roots and logging? SEP-2577 gives the criteria: the specification *"aims to remain minimal and
 focused"*, and these features showed **low adoption**, **overlap with existing alternatives**, or **disproportionate
 implementation burden**. Specifically:

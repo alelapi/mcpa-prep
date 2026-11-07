@@ -382,7 +382,7 @@ The client exchanges the code, sending the **`code_verifier`** and the same **`r
 ### Client side
 
 - Send the token in the **`Authorization: Bearer <token>`** header.
-- Include it on **every HTTP request** to the MCP server.
+- Authorization **MUST** be included on **every HTTP request** to the MCP server — not just the first request of a session.
 - **MUST NOT** put tokens in the **URI query string** (they leak into logs, history and referrers).
 - **MUST NOT** send tokens other than those issued by **the MCP server's AS**.
 

@@ -31,6 +31,13 @@ The specification's overview states three key principles. Every chapter in this 
 - Hosts must obtain explicit user consent before invoking any tool
 - Users should understand what each tool does before authorizing its use
 
+!!! note "Principles vs. the normative rule"
+    The wording above mirrors the spec overview's *principles* section, which is deliberately
+    non-normative ("should be considered untrusted"). The binding requirement lives on the
+    **Tools** page: clients **MUST** consider tool annotations untrusted unless they come from
+    trusted servers. If an exam question asks for the requirement level, the answer is **MUST**
+    — see [Trust boundaries](trust-boundaries.md).
+
 And the sentence that frames the entire domain:
 
 > While MCP itself **cannot enforce** these security principles at the protocol level, implementors **SHOULD**:

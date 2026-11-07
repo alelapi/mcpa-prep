@@ -17,7 +17,9 @@ adopted in this revision (SEP-2596):
 - **New implementations SHOULD NOT adopt it.**
 - **Existing implementations SHOULD migrate** before its earliest removal.
 - It stays for **at least twelve months** before becoming **eligible** for removal (or **ninety days** under the
-  expedited-removal exception).
+  expedited-removal exception). The window is measured **from the revision that first marks the feature
+  Deprecated**, not from when the deprecation SEP reaches Final — which is why HTTP+SSE (deprecated
+  `2025-03-26`, long past the floor) only gets a three-month transition grace period after SEP-2596 is Final.
 - **Eligible** is a floor, not a date. Actual removal is a **Core Maintainer decision** made during release
   preparation, and may be later.
 - Every deprecated feature is listed in the public

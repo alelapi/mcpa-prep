@@ -382,6 +382,13 @@ stream whose first event (`endpoint`) told the client where to POST, and a separ
 since `2025-03-26` and is formally **Deprecated** under the lifecycle policy, eligible for removal three months after
 SEP-2596 reaches Final. **Migrate to Streamable HTTP.**
 
+!!! note "Why only three months? Doesn't the policy require twelve?"
+    The twelve-month minimum deprecation window is measured **from the revision that first marks the
+    feature Deprecated** — for HTTP+SSE that was `2025-03-26`, so the floor elapsed long before the
+    lifecycle policy existed. SEP-2596's transition provisions reclassify such already-deprecated
+    features and give them a grace period of three months after the SEP reaches Final. No conflict
+    with the twelve-month rule in [Domain 1](../domain-1/interoperability.md).
+
 A client supporting it falls back like this: POST to the URL; on `400`/`404`/`405` **without** a recognized modern
 JSON-RPC error body, issue a `GET` and wait for an `endpoint` event.
 
